@@ -39,12 +39,12 @@ export gcc_version="gcc-13.3.0"
 package_src=$AT_SW_SOURCES/boost_1_89_0/
 
 # Installation root directory
-export root_installation_path=${AT_SW_packages/boost/${boost_version}/${gcc_version}
+export root_installation_path=${AT_SW_PACKAGES}/boost/${boost_version}/${gcc_version}
 
 # Build all except for MPI library.
 cd ${package_src}
 ./bootstrap.sh --prefix=${root_installation_path} \
-               --without-libraries=mpi,coroutine,couroutine2 \
+               --without-libraries=mpi,coroutine,coroutine2 \
                --with-toolset=gcc
 
 ./b2 install
